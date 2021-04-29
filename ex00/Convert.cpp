@@ -54,7 +54,7 @@ void Convert::dtoc(double d)
 	if (d < 0 || 127 < d || std::isnan(d))
 		std::cout << "impossible";
 	else if (d < 32 || 126 < d)
-		std::cout << " Non displayable";
+		std::cout << "Non displayable";
 	else
 		std::cout << "'" << static_cast<char>(d) << "'";
 	std::cout << std::endl;
@@ -75,7 +75,7 @@ void Convert::dtof(double d)
 {
 	std::cout << "float: ";
 	std::cout << static_cast<float>(d);
-	if (d == std::floor(d))
+	if (d == std::floor(d) && !std::isinf(d))
 		std::cout << ".0f";
 	else
 		std::cout << "f";
@@ -86,7 +86,7 @@ void Convert::dtod(double d)
 {
 	std::cout << "double: ";
 	std::cout << static_cast<double>(d);
-	if (d == std::floor(d))
+	if (d == std::floor(d) && !std::isinf(d))
 		std::cout << ".0";
 	else
 		std::cout << "";
