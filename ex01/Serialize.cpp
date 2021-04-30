@@ -30,14 +30,14 @@ void* serialize(void)
 	std::cout << "data->n = " << data->n << std::endl;
 	std::cout << "data->s2 = " << data->s2 << std::endl;
 
-	return (static_cast<void*>(data));
+	return (reinterpret_cast<void*>(data));
 }
 
 Data* deserialize(void *raw)
 {
 	Data *data = new Data();
 
-	data = static_cast<Data*>(raw);
+	data = reinterpret_cast<Data*>(raw);
 
 	return (data);
 }
